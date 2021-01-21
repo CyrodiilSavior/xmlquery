@@ -184,11 +184,13 @@ func (x *NodeNavigator) LocalName() string {
 
 func (x *NodeNavigator) Prefix() string {
 	if x.NodeType() == xpath.AttributeNode {
+		fmt.Println("**********************************")
 		if x.attr != -1 {
 			return x.curr.Attr[x.attr].Name.Space
 		}
 		return ""
 	}
+	fmt.Println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
 	return x.curr.Prefix
 }
 
